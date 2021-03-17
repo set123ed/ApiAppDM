@@ -6,7 +6,7 @@
     Title="Lakers Schedule" >
 
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding TeamScheduleInfo}" HasUnevenRows="True" IsVisible="{Binding Connected}" >
+        <ListView ItemsSource="{Binding TeamInfo}" HasUnevenRows="True" IsVisible="{Binding Connected}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

@@ -15,23 +15,21 @@ namespace ApiAppDM.Services
         public async Task<TeamSchedule> GetTeamsScheduleAsync()
         {
 
+            var teamName = "lakers";
             TeamSchedule Tschedule = null;
             var cInternet = Connectivity.NetworkAccess;
 
-            if (cInternet ==  NetworkAccess.Internet)
-            {
+            
                 var refitClient = RestService.For<ITeamRefitApiService>("http://data.nba.net");
 
-                var playersResponse = await refitClient.GetTeamsSchedule("lakers");
+                var playersResponse = await refitClient.GetTeamsSchedule(teamName);
                 if (playersResponse.IsSuccessStatusCode)
                 {
                     var jsonPayload = await playersResponse.Content.ReadAsStringAsync();
                     Tschedule = JsonSerializer.Deserialize<TeamSchedule>(jsonPayload);
                 }
 
-
-
-            }
+            
             return Tschedule;
         }
     }

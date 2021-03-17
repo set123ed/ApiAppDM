@@ -1,5 +1,6 @@
 ﻿using ApiAppDM.Services;
 using Xamarin.Forms;
+using ApiAppDM.Views;
 
 
 
@@ -11,13 +12,13 @@ namespace ApiAppDM
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new TeamSchedulePage();
         }
 
         protected override async void OnStart()
         {
-            var teamService = new TeamScheduleService();
-            var teamScheduleInfo = await teamService.GetTeamsScheduleAsync();
+            //var teamService = new TeamScheduleService();
+            //var teamScheduleInfo = await teamService.GetTeamsScheduleAsync();
 
         }
 
