@@ -1,6 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
+
+
 
 namespace ApiAppDM
 {
@@ -13,8 +13,11 @@ namespace ApiAppDM
             MainPage = new MainPage();
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
+            var teamService = new TeamApiService();
+            var teamScheduleInfo = await teamService.GetTeamScheduleInformation();
+
         }
 
         protected override void OnSleep()

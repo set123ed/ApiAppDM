@@ -1,11 +1,20 @@
-﻿ using System;
-namespace ApiAppDM.Services
+﻿using System;
+using System.Threading.Tasks;
+using ApiAppDM.Models;
+using System.Net.Http;
+using System.Text.Json;
+
+namespace TeamApiService.Services
 {
-    public class ApiService
+    public class TeamApiService : ITeamApiService
     {
-        public ApiService()
+        public async Task<TeamSchedule> GetTeamScheduleInformation()
         {
-       ///  http://data.nba.net/data/10s/prod/v1/year/team_stats_rankings.json
+            HttpClient client = new HttpClient();
+            var teamInfoResponse = await client.GetAsync("http://data.nba.net/data/10s/prod/v1/2016/teams/lakers/schedule.json");
+
+            return JsonSerializer.Deserialize<TeamSchedule>(await teamInfoResponse.Content.ReadAsStringAsync()); 
+
         }
     }
 }

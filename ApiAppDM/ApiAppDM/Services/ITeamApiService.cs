@@ -1,7 +1,13 @@
 ﻿using System;
-namespace ApiAppDM.Services
+using System.Text.Json;
+using System.Threading.Tasks;
+using ApiAppDM.Models;
+
+namespace ITeamApiService
 {
-    public interface IApiService
-    {
-    }
+    public interface ITeamApiService
+
+        {
+            Task<TeamSchedule> GetTeamScheduleInformation();
+        }
 }
