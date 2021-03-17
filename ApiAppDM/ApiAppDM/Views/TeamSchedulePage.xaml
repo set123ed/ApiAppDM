@@ -1,9 +1,31 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<!--<ContentPage
+<ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="ApiAppDM.Views.TeamSchedulePage">
+    x:Class="ApiAppDM.Views.TeamSchedulePage"
+    Title="Lakers Schedule" >
+
     <ContentPage.Content>
+        <ListView ItemsSource="{Binding TeamScheduleInfo}" HasUnevenRows="True" IsVisible="{Binding Connected}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid HorizontalOptions="Start" Margin="30" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <!--<Image Source="{Binding Image}" Grid.RowSpan="2"/>-->
+                        <!--<Image Source="{Binding Image}"  HorizontalOptions="Start"  />-->
+                        <Label Text="{Binding TeamName}"  HorizontalOptions="EndAndExpand" Grid.Row="0" />
+                        <Label Text="{Binding TeamSchedule}" HorizontalOptions="EndAndExpand" Grid.Row="1" />
+                    </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
         
     </ContentPage.Content>
-</ContentPage>-->
+</ContentPage>
