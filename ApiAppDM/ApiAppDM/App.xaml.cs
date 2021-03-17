@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using ApiAppDM.Services;
+using Xamarin.Forms;
 
 
 
@@ -15,8 +16,8 @@ namespace ApiAppDM
 
         protected override async void OnStart()
         {
-            var teamService = new TeamApiService();
-            var teamScheduleInfo = await teamService.GetTeamScheduleInformation();
+            var teamService = new TeamScheduleService();
+            var teamScheduleInfo = await teamService.GetTeamsScheduleAsync();
 
         }
 
