@@ -9,7 +9,7 @@ namespace ApiAppDM.Services
     public interface ITeamRefitApiService
     {
         
-            [Get("/data/10s/prod/v1/2019/teams/{{teamName}}/schedule.json")]
-            Task<HttpResponseMessage> GetTeamsSchedule(string name);
+            [Get("/data/10s/prod/v1/20200101/scoreboard.json")]
+            Task <ScoreBoard> GetTeamsSchedule();
     }
 }

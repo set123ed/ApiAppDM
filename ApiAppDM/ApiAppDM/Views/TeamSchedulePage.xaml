@@ -17,8 +17,8 @@
                         </Grid.RowDefinitions>
                         <!--<Image Source="{Binding Image}" Grid.RowSpan="2"/>-->
                         <!--<Image Source="{Binding Image}"  HorizontalOptions="Start"  />-->
-                        <Label Text="{Binding TeamName}"  HorizontalOptions="EndAndExpand" Grid.Row="0" />
-                        <Label Text="{Binding TeamSchedule}" HorizontalOptions="EndAndExpand" Grid.Row="1" />
+                        <Label Text="{Binding shortName}"  HorizontalOptions="EndAndExpand" Grid.Row="0" TextColor="Black"/>
+                        <Label Text="{Binding longName}" HorizontalOptions="EndAndExpand" Grid.Row="1" TextColor="Black" />
                     </Grid>
 
                     </ViewCell>

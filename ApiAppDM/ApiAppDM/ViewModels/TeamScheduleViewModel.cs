@@ -10,11 +10,11 @@ namespace ApiAppDM.ViewModels
 {
     public class TeamScheduleViewModel 
     {
-        public ObservableCollection<TeamSchedule> TeamInfo { get; set; } = new ObservableCollection<Models.TeamSchedule>();
+        public ObservableCollection<TeamSchedule.National> TeamInfo { get; set; } = new ObservableCollection<Models.TeamSchedule.National>();
         private ITeamScheduleService _teamScheduleService;
-        public TeamScheduleViewModel(Services.TeamScheduleService teamScheduleService)
+        public TeamScheduleViewModel(TeamScheduleService teamScheduleService)
         {
-            _teamScheduleService = teamScheduleService;
+            //_teamScheduleService = teamScheduleService;
             GetInfoSchedule();
         }
 
@@ -23,7 +23,7 @@ namespace ApiAppDM.ViewModels
 
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                
+                await TeamScheduleService.GetTeamsScheduleAsync();
             }
             else
             {
