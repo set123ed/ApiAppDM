@@ -19,7 +19,7 @@
                         </Grid.RowDefinitions>
                         <!--<Image Source="{Binding Image}" Grid.RowSpan="2"/>-->
                         <!--<Image Source="{Binding Image}"  HorizontalOptions="Start"  />-->
-                        <Label Text="{Binding firstName}"  HorizontalOptions="EndAndExpand" Grid.Row="0" TextColor="Black"/>
+                        <Label Text="{Binding Standard.firstName}"  HorizontalOptions="EndAndExpand" Grid.Row="0" TextColor="Black"/>
                         <Label Text="{Binding lastName}" HorizontalOptions="EndAndExpand" Grid.Row="1" TextColor="Black" />
                         <Label Text="{Binding college}" HorizontalOptions="EndAndExpand" Grid.Row="2" TextColor="Black" />
                     </Grid>

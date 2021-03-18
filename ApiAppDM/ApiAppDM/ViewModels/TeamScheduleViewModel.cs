@@ -8,9 +8,9 @@ using Xamarin.Essentials;
 
 namespace ApiAppDM.ViewModels
 {
-    public class TeamScheduleViewModel 
+    public class TeamScheduleViewModel
     {
-        public ObservableCollection<CoachesInformation> CoachesInfo { get; set; } = new ObservableCollection<CoachesInformation>();
+        public ObservableCollection<CoachesInformation> CoachesInfo { get; set; }
         //private ITeamScheduleService _teamScheduleService;
         public TeamScheduleViewModel(TeamScheduleService teamScheduleService)
         {
@@ -18,19 +18,33 @@ namespace ApiAppDM.ViewModels
             GetCoachInfo();
         }
 
+        //CoachesInformation coach = await 
+
+
         private async void GetCoachInfo()
         {
-            //CoachesInformation coach = await 
 
-            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+
+            CoachesInformation coach = new CoachesInformation();
+            coach = await TeamScheduleService.GetCoachesAsync();
+
+            if (coach != null)
             {
-                //var coachInfo = await 
+                //List<CoachesInformation> activlePlayersList = coach..Standard.Where(player => player.IsActive == true).ToList();
+                CoachesInfo = new ObservableCollection<CoachesInformation>();
+                //AllActivePlayers = new ObservableCollection<CoachesInformation>();
+                //InternetConnection = true;
             }
             else
             {
-                await Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Alert", "No tienes Conexion a internet", "Ok");
+                //InternetConnection = false;
+                //await AlertServices.AlertAsync("Error", "No hay conexión a internet");
             }
-
         }
     }
 }
+
+   
+            //else
+            //{
+            //    await Xamarin.Forms.Application.Current.MainPage.DisplayAlert("Alert", "No tienes Conexion a internet", "Ok");

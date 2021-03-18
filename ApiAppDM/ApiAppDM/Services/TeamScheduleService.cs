@@ -5,7 +5,6 @@ using Refit;
 using ApiAppDM.Models;
 using Xamarin.Essentials;
 using System.Text.Json;
-
 namespace ApiAppDM.Services
 {
     public class TeamScheduleService
@@ -28,9 +27,6 @@ namespace ApiAppDM.Services
                     //var jsonPayload = await playersResponse.Content.ReadAsStringAsync();
                     //Tschedule = JsonSerializer.Deserialize<TeamSchedule>(jsonPayload);
                 //}
-
-
-
             }
             return Tschedule;
         }
