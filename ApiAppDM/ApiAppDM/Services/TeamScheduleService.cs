@@ -15,20 +15,10 @@ namespace ApiAppDM.Services
         {
 
             CoachesInformation Tschedule = null;
-            var cInternet = Connectivity.NetworkAccess;
-
-            if (cInternet ==  NetworkAccess.Internet)
-            {
+            //var cInternet = Connectivity.NetworkAccess;
                 var refitClient = RestService.For<ITeamRefitApiService>("http://data.nba.net");
-
                 CoachesInformation playersResponse = await refitClient.GetCoaches();
-                //if (playersResponse.IsSuccessStatusCode)
-                //{
-                    //var jsonPayload = await playersResponse.Content.ReadAsStringAsync();
-                    //Tschedule = JsonSerializer.Deserialize<TeamSchedule>(jsonPayload);
-                //}
-            }
-            return Tschedule;
+                return Tschedule;
         }
     }
 }
