@@ -6,6 +6,6 @@ namespace ApiAppDM.Services
 {
     public interface ITeamScheduleService
     {
-        Task<TeamSchedule> GetTeamsScheduleAsync();
+        Task<CoachesInformation> GetCoachesAsyn();
     }
 }

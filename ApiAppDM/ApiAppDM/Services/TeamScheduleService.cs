@@ -12,17 +12,17 @@ namespace ApiAppDM.Services
     {
 
 
-        public static async Task<TeamSchedule> GetTeamsScheduleAsync()
+        public static async Task<CoachesInformation> GetCoachesAsync()
         {
 
-            TeamSchedule Tschedule = null;
+            CoachesInformation Tschedule = null;
             var cInternet = Connectivity.NetworkAccess;
 
             if (cInternet ==  NetworkAccess.Internet)
             {
                 var refitClient = RestService.For<ITeamRefitApiService>("http://data.nba.net");
 
-                ScoreBoard playersResponse = await refitClient.GetTeamsSchedule();
+                CoachesInformation playersResponse = await refitClient.GetCoaches();
                 //if (playersResponse.IsSuccessStatusCode)
                 //{
                     //var jsonPayload = await playersResponse.Content.ReadAsStringAsync();

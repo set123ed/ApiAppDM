@@ -6,7 +6,7 @@
     Title="Lakers Schedule" >
 
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding TeamInfo}" HasUnevenRows="True" IsVisible="{Binding Connected}" >
+        <ListView x:Name="ListView1" ItemsSource="{Binding CoachesInfo}" HasUnevenRows="True" IsVisible="{Binding Connected}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -14,11 +14,14 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+
                         </Grid.RowDefinitions>
                         <!--<Image Source="{Binding Image}" Grid.RowSpan="2"/>-->
                         <!--<Image Source="{Binding Image}"  HorizontalOptions="Start"  />-->
-                        <Label Text="{Binding shortName}"  HorizontalOptions="EndAndExpand" Grid.Row="0" TextColor="Black"/>
-                        <Label Text="{Binding longName}" HorizontalOptions="EndAndExpand" Grid.Row="1" TextColor="Black" />
+                        <Label Text="{Binding firstName}"  HorizontalOptions="EndAndExpand" Grid.Row="0" TextColor="Black"/>
+                        <Label Text="{Binding lastName}" HorizontalOptions="EndAndExpand" Grid.Row="1" TextColor="Black" />
+                        <Label Text="{Binding college}" HorizontalOptions="EndAndExpand" Grid.Row="2" TextColor="Black" />
                     </Grid>
 
                     </ViewCell>

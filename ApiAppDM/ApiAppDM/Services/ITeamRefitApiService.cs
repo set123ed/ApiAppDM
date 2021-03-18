@@ -9,7 +9,7 @@ namespace ApiAppDM.Services
     public interface ITeamRefitApiService
     {
         
-            [Get("/data/10s/prod/v1/20200101/scoreboard.json")]
-            Task <ScoreBoard> GetTeamsSchedule();
+            [Get("/data/10s/prod/v1/2020/coaches.json")]
+            Task <CoachesInformation> GetCoaches();
     }
 }
