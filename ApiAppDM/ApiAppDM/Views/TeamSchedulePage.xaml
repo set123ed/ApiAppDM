@@ -6,21 +6,15 @@
     Title="Coaches 2020" >
 
     <ContentPage.Content>
-        <ListView x:Name="ListView1" ItemsSource="{Binding CoachesInfo}" HasUnevenRows="True" IsVisible="{Binding Connected}" >
+        <ListView  ItemsSource="{Binding coaches}" HasUnevenRows="True" IsVisible="{Binding Connected}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid HorizontalOptions="Start" Margin="30" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
+                      <StackLayout  Orientation="Horizontal" >
+                        <Label Text="{Binding FirstName}"  TextColor="Black" />
+                        <Label Text="{Binding FirstName}"  TextColor="Black" />
 
-                        </Grid.RowDefinitions>
-                        <Label Text="{Binding firstName}"  HorizontalOptions="EndAndExpand" Grid.Row="0" TextColor="Black"/>
-                        <Label Text="{Binding lastName}" HorizontalOptions="EndAndExpand" Grid.Row="1" TextColor="Black" />
-                        <Label Text="{Binding college}" HorizontalOptions="EndAndExpand" Grid.Row="2" TextColor="Black" />
-                    </Grid>
+                    </StackLayout>
 
                     </ViewCell>
                 </DataTemplate>

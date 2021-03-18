@@ -15,7 +15,7 @@ namespace ApiAppDM
             MainPage = new TeamSchedulePage();
         }
 
-        protected override async void OnStart()
+        protected override  void OnStart()
         {
             //var teamService = new TeamScheduleService();
             //var teamScheduleInfo = await teamService.GetTeamsScheduleAsync();

@@ -8,61 +8,36 @@ namespace ApiAppDM.Models
 {
     public class CoachesInformation
     {
-
-        public class Standard
-        {
-
-            [JsonPropertyName("firstName")]
-            public string FirstName { get; set; }
-
-            [JsonPropertyName("lastName")]
-            public string LastName { get; set; }
-
-            [JsonPropertyName("isAssistant")]
-            public bool IsAssistant { get; set; }
-
-            [JsonPropertyName("personId")]
-            public string PersonId { get; set; }
-
-            [JsonPropertyName("teamId")]
-            public string TeamId { get; set; }
-
-            [JsonPropertyName("sortSequence")]
-            public string SortSequence { get; set; }
-
-            [JsonPropertyName("college")]
-            public string College { get; set; }
-
-            [JsonPropertyName("teamSitesOnly")]
-            public TeamSitesOnly TeamSitesOnly { get; set; }
-        }
         public class TeamSitesOnly
         {
-
-            [JsonPropertyName("displayName")]
             public string DisplayName { get; set; }
-
-            [JsonPropertyName("coachCode")]
             public string CoachCode { get; set; }
-
-            [JsonPropertyName("coachRole")]
             public string CoachRole { get; set; }
-
-            [JsonPropertyName("teamCode")]
             public string TeamCode { get; set; }
-
-            [JsonPropertyName("teamTricode")]
             public string TeamTricode { get; set; }
         }
 
-        public class CouchesInformation
+        public class Standard
         {
-
-            //[JsonPropertyName("_internal")]
-            //public Internal Internal { get; set; }
-
-            //[JsonPropertyName("league")]
-            //public League League { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public bool IsAssistant { get; set; }
+            public string PersonId { get; set; }
+            public string TeamId { get; set; }
+            public string SortSequence { get; set; }
+            public string College { get; set; }
+            public TeamSitesOnly TeamSitesOnly { get; set; }
         }
+        public class League
+        {
+            public IList<Standard> Standard { get; set; }
+        }
+
+        //public class CouchesInformationExample
+        //{
+        //    public Internal _internal { get; set; }
+        //    public League league { get; set; }
+        //}
+
     }
 }
