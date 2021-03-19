@@ -21,15 +21,15 @@ namespace ApiProyect.Models
             //public TeamSitesOnly TeamSitesOnly { get; set; }
         }
 
-        public class League
-        {
-            public IList<Standard> Standard { get; set; }
-        }
+        //public class League
+        //{
+        //    public IList<Standard> Standard { get; set; }
+        //}
 
-        public class CoachInformation
-        {
-            //public Internal Internal { get; set; }
-            public League League { get; set; }
-        }
+        //public class CoachInformation
+        //{
+        //    //public Internal Internal { get; set; }
+        //    public League League { get; set; }
+        //}
     }
 }

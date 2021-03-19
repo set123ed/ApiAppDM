@@ -10,6 +10,6 @@ namespace ApiProyect.Services
         //[Get("/data/10s/prod/v1/2020/coaches.json")]
         //Task<Coach> GetCoach();
 
-        Task<List<Coach.League>> GetCoach();
+        Task<Coach> GetCoach();
     }
 }

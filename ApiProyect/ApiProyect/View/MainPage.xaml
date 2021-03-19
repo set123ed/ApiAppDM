@@ -2,23 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ApiProyect.MainPage">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Show Coach" Command="{Binding AddCommand}"/>
+    </ContentPage.ToolbarItems>
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <ListView ItemsSource="{Binding _Coach}" HasUnevenRows="True" Grid.Row="1" Margin="10,0,10,0">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+
+                <ViewCell>
+                    <Grid HorizontalOptions="Start" Margin="30" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding Image}" Grid.RowSpan="2"/>
+                            <Label Text="{Binding Standard.FirstName, StringFormat='Player name: {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding LastName, StringFormat='Birth country: {0}'}"/>
+                            <Label Text="{Binding College, StringFormat='Team: {0}'}"/>
+                    </Grid>
+
+                    
+                   
+                   
+                </ViewCell>
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
     </StackLayout>
 
 </ContentPage>
