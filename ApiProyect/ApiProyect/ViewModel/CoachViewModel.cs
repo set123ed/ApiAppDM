@@ -18,7 +18,6 @@ namespace ApiProyect.ViewModel
         {
             AddCommand = new Command(GetCoachData);
         }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         public async void GetCoachData()
