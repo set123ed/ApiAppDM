@@ -13,7 +13,7 @@ namespace ApiProyect.Services
         {
         }
 
-        public async Task<Coach> GetCoach()
+        public async Task<List<Coach.League>> GetCoach()
         {
             Coach retVal = null;
 
@@ -28,5 +28,7 @@ namespace ApiProyect.Services
 
             return retVal;
         }
+
+       
     }
 }
