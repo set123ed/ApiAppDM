@@ -9,6 +9,6 @@ namespace ApiProyect.Services
 {
     public interface ICoachApi
     {
-        Task<Standard> GetCoach();
+        Task<Coach> GetCoachList();
     }
 }

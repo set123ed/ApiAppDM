@@ -18,7 +18,7 @@ namespace ApiProyect
         protected async override void OnStart()
         {
             var coachService = new CoachApi();
-            var coachInfo = await coachService.GetCoach();
+            var coachInfo = await coachService.GetCoachList();
 
         }
 

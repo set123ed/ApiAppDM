@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Newtonsoft.Json;
 
 namespace ApiProyect.Models
@@ -86,14 +87,16 @@ namespace ApiProyect.Models
             public TeamSitesOnly teamSitesOnly { get; set; }
         }
 
-        public class League
+        public class League : INotifyPropertyChanged
         {
 
             [JsonProperty("standard")]
             public IList<Standard> standard { get; set; }
+
+            public event PropertyChangedEventHandler PropertyChanged;
         }
 
-        public class TeamLeague
+        public class TeamLigue
         {
 
             [JsonProperty("_internal")]

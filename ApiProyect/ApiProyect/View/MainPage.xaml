@@ -21,10 +21,9 @@
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Source="{Binding Image}" Grid.RowSpan="2"/>
-                            <Label Text="{Binding Standard.FirstName, StringFormat='Player name: {0}'}" FontAttributes="Bold"/>
-                            <Label Text="{Binding LastName, StringFormat='Birth country: {0}'}"/>
-                            <Label Text="{Binding College, StringFormat='Team: {0}'}"/>
+                            <Label Text="{Binding firstName}" />
+                            <Label Text="{Binding LastName}" />
+                            <Label Text="{Binding College}"/>
                     </Grid>
 
                     
