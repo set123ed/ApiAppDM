@@ -1,5 +1,4 @@
-﻿
-using ApiProyect.ViewModel;
+﻿using ApiProyect.ViewModel;
 using Refit;
 using Xamarin.Forms;
 
@@ -10,7 +9,7 @@ namespace ApiProyect
         public MainPage()
         {
             InitializeComponent();
-            //BindingContext = new CoachViewModel();
+            BindingContext = new CoachViewModel();
         }
 
         

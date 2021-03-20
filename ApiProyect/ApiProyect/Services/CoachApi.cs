@@ -11,6 +11,7 @@ namespace ApiProyect.Services
     {
         public CoachApi()
         {
+
         }
 
         public async Task<Coach> GetCoachList()

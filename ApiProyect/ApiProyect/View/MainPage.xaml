@@ -21,9 +21,9 @@
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                            <Label Text="{Binding firstName}" />
-                            <Label Text="{Binding LastName}" />
-                            <Label Text="{Binding College}"/>
+                            <Label Text="{Binding Standard.firstName}" />
+                            <Label Text="{Binding Standard.LastName}" />
+                            <Label Text="{Binding Standard.College}"/>
                     </Grid>
 
                     

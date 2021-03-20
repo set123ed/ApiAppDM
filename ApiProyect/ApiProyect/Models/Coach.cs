@@ -89,7 +89,6 @@ namespace ApiProyect.Models
 
         public class League : INotifyPropertyChanged
         {
-
             [JsonProperty("standard")]
             public IList<Standard> standard { get; set; }
 
