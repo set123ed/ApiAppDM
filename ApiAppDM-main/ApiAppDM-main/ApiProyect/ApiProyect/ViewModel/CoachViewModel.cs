@@ -14,7 +14,9 @@ namespace ApiProyect.ViewModel
 {
     public class CoachViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<League> _Coach { get; set; }
+        public ObservableCollection<JsonObject> _Coach { get; set; }
+
+        JsonObject obj = new JsonObject();
 
         public CoachApi apiService = new CoachApi();
 
@@ -30,23 +32,21 @@ namespace ApiProyect.ViewModel
         public async void GetCoachData()
 
         {
-            List<Standard> itemCount = new List<Standard>();
-            
 
-             App.Current.MainPage.DisplayAlert("Coach list", "Coach List of 2020 ", "Ok");
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
+                
+                obj = await apiService.GetLeague();
+                League league = obj.League.FirstOrDefault();
+                Standard standard = league.Standard.FirstOrDefault();
 
-                var coach = await apiService.GetCoachList();
-                if (coach.GetType().Name == "Coach")
-                {
-                    //List<Coach> CoachList = coach.League.<Standard>.where(coach => player.IsActive == true).ToList();
-                    _Coach = new ObservableCollection<League>();
-                }
+                await App.Current.MainPage.DisplayAlert("Best Coach of 2020", $"{standard.firstName} {standard.lastName}", "Ok");
+
+
             }
             else
             {
-                App.Current.MainPage.DisplayAlert("No Network", "Please connect to network", "Ok");
+                await App.Current.MainPage.DisplayAlert("No Network", "Please connect to network", "Ok");
             }
 
         }

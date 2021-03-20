@@ -87,23 +87,25 @@ namespace ApiProyect.Models
             public TeamSitesOnly teamSitesOnly { get; set; }
         }
 
-        public class League : INotifyPropertyChanged
+        public class League
         {
+
             [JsonProperty("standard")]
-            public IList<Standard> standard { get; set; }
+            public IList<Standard> Standard { get; set; }
+        }
+
+
+        public class JsonObject : INotifyPropertyChanged
+        {
+            [JsonProperty("internal")]
+            public IList<Internal> Intternal { get; set; }
+
+            [JsonProperty("league")]
+            public IList<League> League { get; set; }
 
             public event PropertyChangedEventHandler PropertyChanged;
         }
 
-        public class TeamLigue
-        {
-
-            [JsonProperty("_internal")]
-            public Internal _internal { get; set; }
-
-            [JsonProperty("league")]
-            public League league { get; set; }
-        }
 
 
     }

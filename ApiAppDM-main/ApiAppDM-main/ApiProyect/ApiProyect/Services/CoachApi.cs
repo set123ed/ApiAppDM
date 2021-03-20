@@ -4,19 +4,16 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Collections.Generic;
 using ApiProyect.Models;
+using Newtonsoft.Json;
 
 namespace ApiProyect.Services
 {
     public class CoachApi : ICoachApi
     {
-        public CoachApi()
+   
+        public async Task<Coach.JsonObject> GetLeague()
         {
-
-        }
-
-        public async Task<Coach> GetCoachList()
-        {
-            Coach retVal = null;
+            Coach.JsonObject retVal = null;
 
             HttpClient client = new HttpClient();
             var coachResponse = await client.GetAsync("http://data.nba.net/data/10s/prod/v1/2020/coaches.json");
@@ -24,12 +21,12 @@ namespace ApiProyect.Services
             if(coachResponse.IsSuccessStatusCode)
             {
                 var jsonPayload = await coachResponse.Content.ReadAsStringAsync();
-                retVal = JsonSerializer.Deserialize<Coach>(jsonPayload);
+                retVal = JsonConvert.DeserializeObject<Coach.JsonObject>(jsonPayload);
             }
 
             return retVal;
         }
 
-       
+        
     }
 }
