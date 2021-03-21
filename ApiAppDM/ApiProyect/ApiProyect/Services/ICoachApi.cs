@@ -9,6 +9,6 @@ namespace ApiProyect.Services
 {
     public interface ICoachApi
     {
-        Task<JsonObject> GetLeague();
+        Task<_Coach> GetLeague();
     }
 }

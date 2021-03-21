@@ -14,9 +14,9 @@ namespace ApiProyect.ViewModel
 {
     public class CoachViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<JsonObject> _Coach { get; set; }
+        public ObservableCollection<Standard> _Coach { get; set; }
 
-        JsonObject obj = new JsonObject();
+        //_Coach obj = new JsonObject();
 
         public CoachApi apiService = new CoachApi();
 
@@ -25,6 +25,7 @@ namespace ApiProyect.ViewModel
         public CoachViewModel()
         {
             AddCommand = new Command(GetCoachData);
+            
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -35,13 +36,10 @@ namespace ApiProyect.ViewModel
 
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
+                var coach = await apiService.GetLeague();
+                await App.Current.MainPage.DisplayAlert("Coach League 2020", "There's the Coach List of 2020", "Ok");
+                _Coach = new ObservableCollection<Standard>(coach.League.Standard);
                 
-                obj = await apiService.GetLeague();
-                League league = obj.League.FirstOrDefault();
-                Standard standard = league.Standard.FirstOrDefault();
-
-                await App.Current.MainPage.DisplayAlert("Best Coach of 2020", $"{standard.firstName} {standard.lastName}", "Ok");
-
 
             }
             else
